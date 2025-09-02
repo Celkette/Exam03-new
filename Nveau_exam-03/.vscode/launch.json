@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": ["abc"],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "/home/celine/Bureau/EXAM/Nveau_exam-03/",
+      "program": "/home/celine/Bureau/EXAM/Nveau_exam-03/filter",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

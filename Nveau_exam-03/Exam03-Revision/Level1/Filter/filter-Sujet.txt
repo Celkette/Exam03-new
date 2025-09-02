@@ -1,0 +1,49 @@
+filter:
+Allowed functions: read, strlen, malloc, calloc, realloc, free, printf, perror
+------------------------------------------------------------------------------
+
+Write a programm taht will take one and only one argument s.
+
+Your programm will then read from stdin and write all the content read in stdout
+except that every occurence of s must be replaced by '*'.
+
+For example :
+
+./filter bonjour
+will behave the same way as:
+sed 's/bonjour/*******/g'
+
+in case of error during read or a malloc you must write "Error: " followed by
+the error message in stderr and return 1.
+
+$> echo 'abcdefgaaaabcdefabc' | ./filter abc | cat -e
+***defgaaa***def***
+
+If the program is called whitout argument or with an empty argument or with
+multiples arguments it must return 1.
+
+**************************************************
+**************************************************
+**				  	VERSION FR			 		**
+**************************************************
+**************************************************
+Filtre :
+Fonctions autorisées : read, strlen, malloc, calloc, realloc, free, printf, perror
+------------------------------------------------------------------------------
+
+Écrivez un programme qui ne prendra qu'un seul argument, s.
+
+Votre programme lira ensuite l'entrée standard (stdin) et écrira tout le contenu lu sur la sortie standard (stdout), à la différence que chaque occurrence de s doit être remplacée par « * ».
+
+Par exemple :
+
+./filter bonjour
+se comportera de la même manière que :
+sed 's/bonjour/*******/g'
+
+En cas d'erreur lors d'une lecture ou d'un malloc, vous devez écrire « Erreur : » suivi du message d'erreur dans la sortie standard (stderr) et renvoyer la valeur 1.
+
+$> echo 'abcdefgaaaabcdefabc' | ./filter abc | cat -e
+***defgaaa***def***
+
+Si le programme est appelé sans argument, avec un argument vide ou plusieurs arguments, il doit renvoyer la valeur 1.

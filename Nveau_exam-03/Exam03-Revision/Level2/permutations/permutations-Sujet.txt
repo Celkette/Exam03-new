@@ -1,0 +1,57 @@
+Assignment name : permutations
+
+Expected files : *.c *.h
+Allowed functions : puts, malloc, calloc, realloc, free, write
+---------------------------------------------------------------
+
+Write a program that will print all the permutations of a string given as argument.
+
+The solutions must be given in alphabetical order.
+
+We will not try your program with strings containing duplicates (eg: 'abccd')
+
+For example this should work:
+$> ./permutations a | cat -e
+a$
+$> ./permutations ab | cat -e
+ab$
+ba$
+$> ./permutations abc | cat -e
+abc$
+acb$
+bac$
+bca$
+cab$
+cba$
+
+**************************************************
+**************************************************
+**				  	VERSION FR			 		**
+**************************************************
+**************************************************
+
+Nom de l'affectation : permutations
+
+Fichiers attendus : *.c *.h
+Fonctions autorisées : puts, malloc, calloc, realloc, free, write
+---------------------------------------------------------------
+
+Écrivez un programme qui affichera toutes les permutations d'une chaîne donnée en argument.
+
+Les solutions doivent être données par ordre alphabétique.
+
+Nous n'utiliserons pas votre programme avec des chaînes contenant des doublons (par exemple : « abccd »).
+
+Par exemple, ceci devrait fonctionner :
+$> ./permutations a | cat -e
+a$
+$> ./permutations ab | cat -e
+ab$
+ba$
+$> ./permutations abc | cat -e
+abc$
+acb$
+bac$
+bca$
+cab$
+cba$

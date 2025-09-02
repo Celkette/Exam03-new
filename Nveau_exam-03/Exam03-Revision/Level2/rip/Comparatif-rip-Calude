@@ -1,0 +1,77 @@
+
+
+Analyse de la solution 1 (tdaniel) :
+Cette solution utilise une approche backtracking récursif avec les caractéristiques suivantes :
+
+✅ Points forts :
+Algorithme clair : Backtracking avec deux choix (garder/supprimer)
+Fonction min_to_remove efficace pour calculer le minimum de 
+suppressions
+Gestion correcte des cas déjà équilibrés
+Structure récursive bien organisée
+⚠️ Points d'amélioration :
+Modification directe de la chaîne d'entrée (peut poser problème)
+Pas d'évitement des doublons explicite
+Complexité temporelle élevée (exponentielle)
+🔧 Fonctionnement :
+Calcule le nombre minimum de parenthèses à supprimer
+Explore récursivement toutes les combinaisons possibles
+Vérifie l'équilibre à chaque solution complète
+
+
+🔍 Analyse détaillée de la Solution 2 (Projetos)
+✅ Points forts :
+Fonction invalid identique à min_to_remove (efficace)
+Backtracking correct avec sauvegarde/restauration
+Logique claire : supprime une parenthèse, récurse, restaure
+Paramètre pos évite de re-tester les positions précédentes
+❌ Points faibles :
+Pas de vérification argc → crash potentiel si pas d'argument
+Commentaire //needs to be changed → code incomplet
+Pas d'optimisation early termination → peut explorer inutilement
+Includes inutiles : stdlib.h, string.h non utilisés
+🔧 Différence algorithmique importante :
+Solution 1 (tdaniel) : À chaque position, fait 2 choix 
+(garder/supprimer) Solution 2 (Projetos) : À chaque appel, supprime UNE parenthèse parmi toutes les suivantes
+
+🐛 Problème potentiel :
+La solution 2 ne génère QUE des solutions où on supprime exactement 
+must_fix caractères, mais ne teste jamais l'option "garder toutes 
+les parenthèses" si la chaîne est déjà équilibrée.
+
+
+
+🔍 Analyse de la Solution 3 (Seb)
+❌ État de la solution :
+Cette solution est INCOMPLÈTE et contient plusieurs erreurs de 
+syntaxe :
+	static int	init_struct(t_data *data, char *line)
+	{
+		if (
+		data->open = ;      // ❌ Syntaxe invalide
+		data->close = ;     // ❌ Syntaxe invalide  
+		data->len = ;       // ❌ Syntaxe invalide
+		data->start = line;
+		data->last = NULL;
+	}
+🔧 Approche tentée :
+Structure de données : Utilise un t_data (non défini)
+Fonction print : Utilise un masque pour marquer les suppressions
+Méthode différente : Approche par masque binaire plutôt que 
+modification directe
+✅ Points intéressants :
+Fonction print avec masque : Idée intelligente pour éviter la 
+modification directe
+Gestion d'erreur : Vérifie argc et av[1]
+Structure modulaire : Séparation logique des fonctions
+
+📊 COMPARAISON FINALE DES 3 SOLUTIONS
+Classement par qualité :
+🥇 1ère place : Solution 1 (tdaniel)
+🥈 2ème place : Solution 2 (Projetos)
+🥉 3ème place : Solution 3 (Seb)
+Recommandation :
+Utilisez la Solution 1 (tdaniel) comme référence - elle est la plus 
+complète et robuste. La Solution 2 pourrait être améliorée en 
+ajoutant la gestion d'erreur. La Solution 3 nécessite d'être 
+complètement terminée.

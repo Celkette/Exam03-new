@@ -1,0 +1,119 @@
+Assignment name			: tsp
+Expected files			: *.c *.h
+Allowed functions   : write, sqrtf, getline, fseek, fscanf, ferror, feof, fabsf, memcpy, fprintf, fclose, malloc, calloc, realloc, free, fopen, errno, stderr, stdin, stdout
+-------------------------------------------------------
+
+The first publication referring to this problem as the "traveling salesman 
+problem" is found in the 1949 RAND Corporation report by Julia Robinson, 
+"On the Hamiltonian game (a traveling salesman problem)."
+
+Here is how she defines the problem:
+
+"The purpose of this note is to give a method for solving a problem related
+to the traveling salesman problem. It seems worthwhile to give a description
+of the original problem. One formulation is to find the shortest route for a
+salesman starting from Washington, visiting all the state capitals and then
+returning to Washington.
+
+More generally, to find the shortest CLOSED CURVE containing n given points 
+in the plane."
+
+for example with the following set of cities:
+0, 0
+1, 0
+2, 0
+0, 1
+1, 1
+2, 1
+1, 2
+2, 2
+which can be presented as follows:
++ + +
++ + +
+  + +
+the shortest path is:
+ _____
+|__   |
+   |__|
+
+so you should print the length of this path that is:
+8.00
+
+Write a program that will read a set of city coordinates in the form 
+'%f, %f\n' from the standard input and will print the length of the shortest
+possible path containing all these cities under the form '%.2f'.
+
+Your program will not be tested with more than 11 cities.
+
+You will find in this directory a file tsp.c containing all the boring parts of
+this exercise and example files to help you test your program.
+
+hint: in order to use sqrtf, add -lm at the end of your compilation command.
+
+For example this should work:
+$> cat square.txt
+1, 1
+0, 1
+1, 0
+0, 0
+$> ./tsp < square.txt | cat -e
+4.00$
+
+**************************************************
+**************************************************
+**				  	VERSION FR			 		**
+**************************************************
+**************************************************
+
+Nom de l'affectation : tsp
+Fichiers attendus : *.c *.h
+Fonctions autorisées : write, sqrtf, getline, fseek, fscanf, ferror, feof, fabsf, memcpy, fprintf, fclose, malloc, calloc, realloc, free, fopen, errno, stderr, stdin, stdout
+-------------------------------------------------------
+
+La première publication faisant référence à ce problème sous le nom de « problème du voyageur de commerce » se trouve dans le rapport de la RAND Corporation de 1949, rédigé par Julia Robinson, intitulé « Sur le jeu hamiltonien (un problème du voyageur de commerce) ».
+
+Voici comment elle définit le problème :
+
+« L’objectif de cette note est de proposer une méthode pour résoudre un problème apparenté au problème du voyageur de commerce. Il semble utile de décrire le problème initial. Une formulation consiste à trouver le chemin le plus court pour un voyageur de commerce partant de Washington, visitant toutes les capitales des États, puis retournant à Washington.
+
+Plus généralement, il s’agit de trouver la plus courte COURBE FERMÉE contenant n points donnés
+dans le plan.»
+
+Par exemple, avec l’ensemble de villes suivant :
+0, 0
+1, 0
+2, 0
+0, 1
+1, 1
+2, 1
+1, 2
+2, 2
+qui peut être présenté comme suit :
++ + +
++ + +
+  + +
+le chemin le plus court est :
+ _____
+|__   |
+   |__|
+
+
+Vous devriez donc afficher la longueur de ce chemin, soit :
+8.00
+
+Écrivez un programme qui lira un ensemble de coordonnées de villes sous la forme « %f, %f\n » depuis l'entrée standard et affichera la longueur du chemin le plus court possible contenant toutes ces villes sous la forme « %.2f ».
+
+Votre programme ne sera pas testé avec plus de 11 villes.
+
+Vous trouverez dans ce répertoire un fichier tsp.c contenant toutes les parties fastidieuses de cet exercice, ainsi que des fichiers d'exemple pour vous aider à tester votre programme.
+
+Indice : pour utiliser sqrtf, ajoutez -lm à la fin de votre commande de compilation.
+
+Par exemple, ceci devrait fonctionner :
+$> cat square.txt
+1, 1
+0, 1
+1, 0
+0, 0
+$> ./tsp < square.txt | cat -e
+4.00$

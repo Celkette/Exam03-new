@@ -1,0 +1,14 @@
+output/*
+*.o
+*.out
+*.a
+.vscode
+.DS_Store
+a.out
+*.dSYM
+*.swp
+*.txt
+!subject*
+test/*
+test.c
+train*

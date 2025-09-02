@@ -1,0 +1,60 @@
+Assignment name: rip
+Expected files: *.c *.h
+Allowed functions: puts, write
+--------------------------------------------------------------------------------
+Write a program that will take as argument a string containing only parenthesis.
+If parenthesis are unbalanced (for example "())") your program shall remove the
+minimum number of parenthesis for the expression to be balanced.
+By removing we mean replacing by spaces.
+You will print all the solutions (can be more than one).
+The order of the solutions is not important.
+For example this should work:
+(For readability reasons the '_' means space and the spaces are for readability only.)
+$> ./rip '( ( )' | cat -e
+_ ( ) $
+( _ ) $
+$> ./rip '( ( ( ) ( ) ( ) ) ( ) )' | cat -e
+( ( ( ) ( ) ( ) ) ( ) ) $
+$> ./rip '( ) ( ) ) ( )' | cat -e
+( ) ( ) _ ( ) $
+( ) ( _ ) ( ) $
+( _ ( ) ) ( ) $
+$> ./rip '( ( ) ( ( ) (' | cat -e
+( ( ) _ _ ) _ $
+( _ ) ( _ ) _ $
+( _ ) _ ( ) _ $
+_ ( ) ( _ ) _ $
+_ ( ) _ ( ) _ $
+
+**************************************************
+**************************************************
+**				  	VERSION FR			 		**
+**************************************************
+**************************************************
+
+Nom de l'affectation : rip
+Fichiers attendus : *.c *.h
+Fonctions autorisées : puts, write
+--------------------------------------------------------------------------------
+Écrivez un programme qui prendra comme argument une chaîne contenant uniquement des parenthèses.
+Si les parenthèses ne sont pas équilibrées (par exemple « ()) », votre programme supprimera le nombre minimal de parenthèses pour que l'expression soit équilibrée.
+Par « supprimer », on entend les remplacer par des espaces.
+Vous afficherez toutes les solutions (il peut y en avoir plusieurs).
+L'ordre des solutions n'a pas d'importance.
+Par exemple, ceci devrait fonctionner :
+(Pour des raisons de lisibilité, le « _ » signifie espace et les espaces servent uniquement à faciliter la lecture.)
+$> ./rip '( ( )' | cat -e
+_ ( ) $
+( _ ) $
+$> ./rip '( ( ( ) ( ) ( ) ) ( ) )' | cat -e
+( ( ( ) ( ) ( ) ) ( ) ) $
+$> ./rip '( ) ( ) ) ( )' | cat -e
+( ) ( ) _ ( ) $
+( ) ( _ ) ( ) $
+( _ ( ) ) ( ) $
+$> ./rip '( ( ) ( ( ) (' | cat -e
+( ( ) _ _ ) _ $
+( _ ) ( _ ) _ $
+( _ ) _ ( ) _ $
+_ ( ) ( _ ) _ $
+_ ( ) _ ( ) _ $

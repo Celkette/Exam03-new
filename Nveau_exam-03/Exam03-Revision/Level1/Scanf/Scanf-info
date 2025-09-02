@@ -1,0 +1,124 @@
+//fgetc : Lit un caractère depuis un flux (par exemple, le clavier ou un fichier).
+		lit le prochain caractère depuis un flux (par exemple, le clavier ou un fichier).
+		Elle retourne ce caractère comme un unsigned char converti en int.
+		Si la fin du flux est atteinte ou s’il y a une erreur, elle retourne la valeur spéciale EOF.
+
+//ungetc : Replace un caractère précédemment lu dans le flux, pour qu’il soit lu à nouveau lors du prochain appel à fgetc.
+//int ungetc(int c, FILE *stream);
+		La fonction ungetc() remet le caractère c dans le flux, converti en unsigned char.
+		Ce caractère sera lu lors du prochain appel à fgetc.
+
+//ferror : Vérifie s’il y a eu une erreur de lecture ou d’écriture sur le flux.
+		La fonction ferror(FILE *stream) vérifie s’il y a eu une erreur de lecture ou d’écriture sur le flux stream.
+		Elle retourne une valeur non nulle si une erreur est détectée, sinon 0.
+		Cela permet de savoir si une opération sur le flux (comme fgetc) a échoué à cause d’un problème (fichier inaccessible, erreur matérielle, etc.).
+
+//feof : Vérifie si la fin du flux (fin de fichier ou d’entrée) a été atteinte.
+		elle retourne une valeur non nulle si la fin du flux est atteinte, sinon 0.
+		Cela sert à savoir si toutes les données ont été lues ou si on est arrivé au bout du fichier/entrée.
+
+//isspace : Teste si un caractère est un espace, une tabulation ou un retour à la ligne.
+		Elle retourne une valeur non nulle si c’est le cas, sinon 0.
+		Cela permet d’ignorer les espaces lors de la lecture de l’entrée.
+
+//isdigit : Teste si un caractère est un chiffre décimal (0-9).
+		Elle retourne une valeur non nulle si c’est le cas, sinon 0.
+		Cela permet de vérifier si un caractère lu dans le flux est un chiffre.
+
+//stdin : Représente le flux d’entrée standard (généralement le clavier).
+		est une variable prédéfinie en C qui représente le flux d’entrée standard, généralement le clavier.
+		Elle est utilisée comme argument pour les fonctions de lecture (fgetc(stdin), scanf, etc.) afin de lire les données saisies par l’utilisateur.
+
+//va_start : Initialise une liste d’arguments variables pour une fonction qui utilise ... (arguments variadiques). 
+//va_start(va_list ap, last)
+		Elle doit être appelée avant d’utiliser va_arg pour récupérer les arguments.
+		ap est la variable de type va_list et last est le dernier argument fixe avant les ....
+		Cela permet de parcourir les arguments supplémentaires passés à la fonction.
+
+//va_arg : Récupère l’argument suivant dans la liste d’arguments variables. 
+//va_arg(va_list ap, type)
+		ap est la liste initialisée avec va_start, et type est le type de l’argument attendu (par exemple, int, char *).
+		Chaque appel à va_arg avance dans la liste et donne l’argument suivant.
+		Elle est utilisée pour traiter les arguments supplémentaires passés à une fonction variadique.
+
+//va_copy : Copie une liste d’arguments variables. 
+//va_copy(va_list dest, va_list src)
+		Elle est utile si tu veux parcourir les arguments plusieurs fois ou les transmettre à une autre fonction.
+		dest sera une copie indépendante de src, initialisée pour lire les mêmes arguments.
+
+//va_end : Termine l’utilisation de la liste d’arguments variables.
+//va_end(va_list ap)
+		Elle doit être appelée à la fin du traitement des arguments pour libérer les ressources associées.
+		C’est obligatoire pour éviter des comportements indéfinis.
+
+/*****************************************************/
+/******** va_start - va_arg - va_copy - va_end *******/
+/*****************************************************/
+//Exemple simple qui montre comment utiliser va_start, va_arg, va_copy et va_end dans une fonction variadique :
+#include <stdio.h>
+#include <stdarg.h>
+
+// Fonction qui affiche la somme de n entiers passés en arguments
+int somme(int n, ...)
+{
+    va_list ap;                // Déclare la liste d'arguments variables
+    va_start(ap, n);           // Initialise la liste à partir de n
+
+    int total = 0;
+    for (int i = 0; i < n; i++)
+        total += va_arg(ap, int); // Récupère chaque entier avec va_arg
+
+    va_end(ap);                // Termine l'utilisation de la liste
+    return total;
+}
+
+int main()
+{
+    printf("%d\n", somme(3, 10, 20, 30)); // Affiche 60
+
+    // Exemple avec va_copy
+    va_list ap1, ap2;
+    va_start(ap1, 3);
+    va_copy(ap2, ap1);         // Copie la liste ap1 dans ap2
+    // ... tu pourrais utiliser ap2 dans une autre fonction ...
+    va_end(ap1);
+    va_end(ap2);
+    return 0;
+}
+//va_start(ap, n) : initialise la liste d’arguments variables à partir du dernier argument 
+//fixe (n).
+//va_arg(ap, int) : récupère chaque argument supplémentaire (ici, des int).
+//va_copy(ap2, ap1) : crée une copie de la liste d’arguments (utile si tu veux parcourir 
+//	les arguments plusieurs fois ou dans une autre fonction).
+//va_end(ap) : termine et libère les ressources associées à la liste.
+//Résumé : Ces macros permettent de gérer les fonctions qui acceptent un nombre variable 
+//d’arguments, comme printf ou ton propre ft_scanf.
+
+//Exemple de fonction variadique qui affiche plusieurs caractères passés en arguments :
+#include <stdio.h>
+#include <stdarg.h>
+
+// Fonction qui affiche n caractères passés en arguments
+void affiche_chars(int n, ...)
+{
+    va_list ap;                // Déclare la liste d'arguments variables
+    va_start(ap, n);           // Initialise la liste à partir de n
+
+    for (int i = 0; i < n; i++)
+    {
+        char c = va_arg(ap, int); // Récupère chaque caractère (attention : char promu en int)
+        printf("%c ", c);
+    }
+
+    va_end(ap);                // Termine l'utilisation de la liste
+    printf("\n");
+}
+
+int main()
+{
+    affiche_chars(5, 'A', 'B', 'C', 'D', 'E'); // Affiche : A B C D E
+    return 0;
+}
+
+//Les arguments de type char sont promus en int lors du passage à une fonction variadique, donc on utilise va_arg(ap, int).
+//On utilise va_start pour initialiser, va_arg pour récupérer chaque caractère, et va_end pour terminer.

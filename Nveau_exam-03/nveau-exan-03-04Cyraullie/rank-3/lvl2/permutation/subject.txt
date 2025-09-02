@@ -1,0 +1,5 @@
+permutations
+puts, malloc, calloc, realloc, free, write
+Write a program that will print all the permutations of a string giver as argument.
+The solutions must be given in alphabetical order.
+We will not try your program with trings containing duplicates (e.g. 'abccd').
