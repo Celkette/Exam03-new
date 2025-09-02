@@ -1,0 +1,30 @@
+Assignment name: rip
+Assigned files: *.c, *.h
+Allowed functions: puts, write
+
+Write a program that takes as an argument a string containing only parentheses.
+If the parentheses are unbalanced (for instance: "(()"), your program shall removed the 
+minimal number of parenthesis for expression to be balanced.
+By removing we mean replacing by spaces.
+
+You whill print all solutions (can be more than one).
+The order of the solutions is not important.
+For example this should word:
+(For readability reasons the '_' means space and the spaces are for readability only.)
+
+$> ./rip '( ( )' | cat -e
+_ ( ) $
+( _ ) $
+$> ./rip '( ( ( ) ( ) ( ) ) ( ) )' | cat -e
+( ( ( ) ( ) ( ) ) ( ) ) $
+$> ./rip '( ) ( ) ) ( )' | cat -e
+( ) ( ) _ ( ) $
+( ) ( _ ) ( ) $
+( _ ( ) ) ( ) $
+$> ./rip '( ( ) ( ( ) (' | cat -e
+( ( ) _ _ ) _ $
+( _ ) ( _ ) _ $
+( _ ) _ ( ) _ $
+_ ( ) ( _ ) _ $
+_ ( ) _ ( ) _ $
+$>
