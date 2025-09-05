@@ -129,7 +129,7 @@ int main(int ac, char **av) // Fonction principale
 
 /*************************************************************/
 //SANS COMMENTAIRE
-#include <unistd.h>
+/*#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -252,28 +252,28 @@ int main(int ac, char **av)
     print_perms(all_perms, total_perms);
     free_all_perms(all_perms, total_perms);
     return 0;
-}
+}*/
 
 /***********************************************************/
 //COMMENTAIRE ORIGINAUX
 //correction free malloc faite
 
 
-// TO DO: NEEDS TO HANDLE MALLOC FAILURES AND FREE MEMORY
+/*// TO DO: NEEDS TO HANDLE MALLOC FAILURES AND FREE MEMORY
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-/* basic logic of the program: 
-- use factorial function to calculate how many permutations there are 
-for a given number of unique characters (i.e. the size of the given string)
-- use malloc to create a matrix (char **all_perms) to hold all permutations.
-- the number of rows in the matrix equals the total number of permutations possible,
-and the number of columns in each row equals the size of the original string given, plus nul-terminator.
-- use recursion to generate permutations and copy them into the matrix one at a time.
-- sort the permutations in the matrix using strcmp function and bubble sort algorithm.
-- print out the sorted matrix.
-*/
+//basic logic of the program: 
+//- use factorial function to calculate how many permutations there are 
+//for a given number of unique characters (i.e. the size of the given string)
+//- use malloc to create a matrix (char **all_perms) to hold all permutations.
+//- the number of rows in the matrix equals the total number of permutations possible,
+//and the number of columns in each row equals the size of the original string given, plus nul-terminator.
+//- use recursion to generate permutations and copy them into the matrix one at a time.
+//- sort the permutations in the matrix using strcmp function and bubble sort algorithm.
+//- print out the sorted matrix.
+
 
 
 int ft_strlen(char *s)
@@ -310,16 +310,16 @@ void generate_all_perms(int current_index, int size, char *s, char **all_perms, 
 		(*perms_row_index)++; // Increment the index for the next permutation
 		return ;
 	}
-	/* Start from the given current index in the string: 
-	1) keep the character at the current index in its current position,
-	which is implicit in the below loop logic 
-	when the iterator i is equal to the current index (swapping 
-	the character with itself -> nothing happens); OR 
-	2) swap the character at the current index with each character to the right
-	of itself (when iterator i is larger than the current index and smaller than size)
-	If the current index is equal to size, print the permutation, else 
-	keep operating similarly for all valid index positions. 
-	Thereafter, swap back the values to original values to initiate backtracking.*/
+	// Start from the given current index in the string: 
+	//1) keep the character at the current index in its current position,
+	//which is implicit in the below loop logic 
+	//when the iterator i is equal to the current index (swapping 
+	//the character with itself -> nothing happens); OR 
+	//2) swap the character at the current index with each character to the right
+	//of itself (when iterator i is larger than the current index and smaller than size)
+	//If the current index is equal to size, print the permutation, else 
+	//keep operating similarly for all valid index positions. 
+	//Thereafter, swap back the values to original values to initiate backtracking.
 	for (int i = current_index; i < size; i++)
 	{
 		char temp = s[i]; 
@@ -423,3 +423,4 @@ int main(int ac, char **av)
     free_all_perms(all_perms, total_perms);
 	return 0;
 }
+*/

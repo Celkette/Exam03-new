@@ -1,6 +1,6 @@
 #include <stdio.h>          // Pour fprintf
 #include <stdlib.h>         // Pour atoi, calloc, free
-#include "queen-Seb.h"      // Header personnalisé
+//#include "queen-Seb.h"      // Header personnalisé
 int abs(int a)              // Fonction valeur absolue (car abs() standard non autorisée)
 {
     return (a < 0 ? -a : a);    // Si négatif retourne -a, sinon retourne a

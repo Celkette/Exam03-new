@@ -10,7 +10,7 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
     i = 0;              // Initialisation à 0
     if (n == 0)         // Si on compare 0 caractères
         return (0);     // Les chaînes sont égales
-    while (i < n && s1[i] == s2[i] && s1[i])  // Compare tant que : pas fini, égaux, pas '\0'
+    while (i < n && s1[i] && s1[i] == s2[i])  // Compare tant que : pas fini, égaux, pas '\0'
         i++;            // Passe au caractère suivant
     return ((unsigned char)s1[i] - (unsigned char)s2[i]);  // Retourne la différence
 }

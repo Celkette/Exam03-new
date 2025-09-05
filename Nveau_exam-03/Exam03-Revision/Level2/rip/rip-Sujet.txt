@@ -36,13 +36,17 @@ Nom de l'affectation : rip
 Fichiers attendus : *.c *.h
 Fonctions autorisées : puts, write
 --------------------------------------------------------------------------------
-Écrivez un programme qui prendra comme argument une chaîne contenant uniquement des parenthèses.
-Si les parenthèses ne sont pas équilibrées (par exemple « ()) », votre programme supprimera le nombre minimal de parenthèses pour que l'expression soit équilibrée.
+Écrivez un programme qui prendra comme argument une chaîne contenant 
+uniquement des parenthèses.
+Si les parenthèses ne sont pas équilibrées (par exemple « ()) », votre 
+programme supprimera le nombre minimal de parenthèses pour que l'expression 
+soit équilibrée.
 Par « supprimer », on entend les remplacer par des espaces.
 Vous afficherez toutes les solutions (il peut y en avoir plusieurs).
 L'ordre des solutions n'a pas d'importance.
 Par exemple, ceci devrait fonctionner :
-(Pour des raisons de lisibilité, le « _ » signifie espace et les espaces servent uniquement à faciliter la lecture.)
+(Pour des raisons de lisibilité, le « _ » signifie espace et les espaces 
+servent uniquement à faciliter la lecture.)
 $> ./rip '( ( )' | cat -e
 _ ( ) $
 ( _ ) $
